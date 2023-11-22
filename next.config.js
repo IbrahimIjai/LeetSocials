@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['uploadthing.com', 'lh3.googleusercontent.com'],
+    domains: ['uploadthing.com','pbs.twimg.com', 'lh3.googleusercontent.com'],
   },
   experimental: {
-    appDir: true
   }
 }
 
