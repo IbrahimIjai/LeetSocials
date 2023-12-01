@@ -44,6 +44,7 @@ specifiers:
   nanoid: ^4.0.2
   next: 14.0.3
   next-auth: ^4.22.1
+  next-themes: ^0.2.1
   postcss: 8.4.23
   prisma: ^4.14.1
   react: 18.2.0
@@ -99,6 +100,7 @@ dependencies:
   nanoid: 4.0.2
   next: 14.0.3_biqbaboplfbrettd7655fr4n2y
   next-auth: 4.24.5_pvgaconotzu4vdk37yty4okb7y
+  next-themes: 0.2.1_pvgaconotzu4vdk37yty4okb7y
   postcss: 8.4.23
   prisma: 4.16.2
   react: 18.2.0
@@ -3225,6 +3227,18 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       uuid: 8.3.2
+    dev: false
+
+  /next-themes/0.2.1_pvgaconotzu4vdk37yty4okb7y:
+    resolution: {integrity: sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==}
+    peerDependencies:
+      next: '*'
+      react: '*'
+      react-dom: '*'
+    dependencies:
+      next: 14.0.3_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /next/14.0.3_biqbaboplfbrettd7655fr4n2y:
