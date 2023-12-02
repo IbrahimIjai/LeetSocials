@@ -54,3 +54,9 @@ export function formatTimeToNow(date: Date): string {
     },
   })
 }
+
+export function isMacOs() {
+  if (typeof window === "undefined") return false
+
+  return window.navigator.userAgent.includes("Mac")
+}

@@ -5,6 +5,7 @@ import Providers from "@/providers";
 import { Toaster } from "@/components/ui/Toaster";
 
 import "@/styles/globals.css";
+import { ThemeProvider } from "@/providers/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,23 +22,24 @@ export default function RootLayout({
   authModal: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={cn(
-        "bg-white text-slate-900 antialiased light",
-        inter.className,
-      )}
-    >
-      <body className="min-h-screen pt-12 antialiased bg-slate-50">
+    <html lang="en" className={inter.className}>
+      <body className="min-h-screen pt-12 bg-background ">
         <Providers>
-          {/* @ts-expect-error Server Component */}
-          <Navbar />
-          {authModal}
-          <div className="container h-full pt-12 mx-auto max-w-7xl">
-            {children}
-          </div>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {/* @ts-expect-error Server Component */}
+            <Navbar />
+            {authModal}
+            <div className="container h-full pt-12 mx-auto max-w-7xl">
+              {children}
+            </div>
+            <Toaster />
+          </ThemeProvider>
         </Providers>
-        <Toaster />
       </body>
     </html>
   );
