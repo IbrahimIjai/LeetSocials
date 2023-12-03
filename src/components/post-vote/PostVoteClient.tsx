@@ -78,40 +78,41 @@ const PostVoteClient = ({
   })
 
   return (
-    <div className='flex flex-col gap-4 sm:gap-0 pr-6 sm:w-20 pb-4 sm:pb-0'>
+    <div className='flex sm:gap-0 sm:w-20 sm:pb-0'>
       {/* upvote */}
       <Button
         onClick={() => vote('UP')}
         size='sm'
         variant='ghost'
-        aria-label='upvote'>
+        aria-label='upvote'
+        className={cn("p-0")}
+        >
         <ArrowBigUp
-          className={cn('h-5 w-5 text-zinc-700', {
-            'text-emerald-500 fill-emerald-500': currentVote === 'UP',
+          className={cn('h-5 w-5', {
+            'text-primary fill-primary': currentVote === 'UP',
           })}
         />
       </Button>
-
-      {/* score */}
-      <p className='text-center py-2 font-medium text-sm text-zinc-900'>
-        {votesAmt}
-      </p>
 
       {/* downvote */}
       <Button
         onClick={() => vote('DOWN')}
         size='sm'
-        className={cn({
+        className={cn("p-0",{
           'text-emerald-500': currentVote === 'DOWN',
         })}
         variant='ghost'
         aria-label='downvote'>
         <ArrowBigDown
-          className={cn('h-5 w-5 text-zinc-700', {
+          className={cn('h-5 w-5 ', {
             'text-red-500 fill-red-500': currentVote === 'DOWN',
           })}
         />
       </Button>
+      {/* score */}
+      <p className='py-2 text-sm font-medium text-center '>
+       {votesAmt}
+      </p>
     </div>
   )
 }

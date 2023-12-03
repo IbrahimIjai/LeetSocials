@@ -15,6 +15,7 @@ import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
 
 import '@/styles/editor.css'
+import { ThemeToggle } from '../layout/ThemeToggle'
 
 type FormData = z.infer<typeof PostValidator>
 
@@ -184,7 +185,8 @@ export const Editor: React.FC<EditorProps> = ({ subredditId }) => {
   const { ref: titleRef, ...rest } = register('title')
 
   return (
-    <div className='w-full p-4 border rounded-lg bg-zinc-50 border-zinc-200'>
+    <div className='w-full p-4 border rounded-lg '>
+      <ThemeToggle/>
       <form
         id='subreddit-post-form'
         className='w-fit'

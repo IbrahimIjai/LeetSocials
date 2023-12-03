@@ -1,3 +1,4 @@
+import MiniCreatePost from "@/components/MiniCreatePost";
 import CustomFeed from "@/components/homepage/CustomFeed";
 import GeneralFeed from "@/components/homepage/GeneralFeed";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
@@ -15,13 +16,14 @@ export default async function Home() {
   return (
     <>
       <h1 className="text-3xl font-bold md:text-4xl">Your feed</h1>
+      <MiniCreatePost session={session} />
       <ThemeToggle/>
       <div className="grid grid-cols-1 py-6 md:grid-cols-3 gap-y-4 md:gap-x-4">
         {/* @ts-expect-error server component */}
         {session ? <CustomFeed /> : <GeneralFeed />}
 
         {/* subreddit info */}
-        <div className="order-first overflow-hidden border border-gray-200 rounded-lg bg-accent h-fit md:order-last">
+        <div className="order-first overflow-hidden border rounded-lg bg-accent/40 h-fit md:order-last">
           <div className="px-6 py-4">
             <p className="font-semibold py-3 flex items-center gap-1.5">
               <HomeIcon className="w-4 h-4" />

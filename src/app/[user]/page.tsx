@@ -1,3 +1,5 @@
+
+
 import MiniCreatePost from "@/components/MiniCreatePost";
 import PostFeed from "@/components/post/PostFeed";
 import { INFINITE_SCROLL_PAGINATION_RESULTS } from "@/config";
@@ -7,12 +9,12 @@ import { notFound } from "next/navigation";
 
 interface PageProps {
   params: {
-    slug: string;
+    user: string;
   };
 }
 
 const page = async ({ params }: PageProps) => {
-  const { slug } = params;
+  const { user } = params;
 
   const session = await getAuthSession();
 
